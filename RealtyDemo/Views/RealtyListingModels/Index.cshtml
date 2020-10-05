@@ -1,0 +1,136 @@
+﻿@model IEnumerable<RealtyDemo.Models.RealtyListingModel>
+
+@{
+    ViewBag.Title = "View Listings";
+}
+
+@Html.Partial("_SearchPartial")
+
+@if (HttpContext.Current.User.Identity.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("Create New Listing", "Create")
+    </p>
+    <br />
+}
+
+<!--could be cleaned up in a partial results shared view or something similar-->
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StreetAddressLine1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StreetAddressLine2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StreetAddressCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StreetAddressState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StreetAddressZipCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StreetAddressNeighborhood)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InitialListingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BedroomCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pictures)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BathroomCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GarageSizeSquareFeet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HouseSizeSquareFeet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LotSizeSquareFeet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.StreetAddressLine1)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StreetAddressLine2)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StreetAddressCity)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StreetAddressState)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StreetAddressZipCode)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StreetAddressNeighborhood)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SalePrice)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.InitialListingDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BedroomCount)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Pictures)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BathroomCount)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GarageSizeSquareFeet)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HouseSizeSquareFeet)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LotSizeSquareFeet)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Description)
+    </td>
+    @if (HttpContext.Current.User.Identity.IsAuthenticated)
+    {
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.MLSID })
+            <br />
+            @Html.ActionLink("Details", "Details", new { id = item.MLSID })
+            <br />
+            @Html.ActionLink("Delete", "Delete", new { id = item.MLSID })
+        </td>
+    }
+    else
+    {
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.MLSID })
+        </td>
+    }
+
+</tr>
+    }
+
+</table>

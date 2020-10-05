@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - West Coast Realty</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="header-wrapper">
+        <div id="masthead" class="header-main nav-dark">
+            <div class="header-inner flex-row container logo-left medium-logo-center" role="navigation">
+                <div>
+                    <ul class="nav navbar-nav navbar-center">
+                        <li class="nav-top-link">@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li class="nav-top-link">@Html.ActionLink("Listings", "Index", "RealtyListingModels")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - West Coast Realty</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿@using (Html.BeginForm("Search", "RealtyListingModels", FormMethod.Get, new { @class = "search" }))
+{
+    <div>
+        <table class="table">
+            <tr>
+                <th>Search Fields</th>
+                <th>Search Value</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>
+                    <label>@Html.RadioButton("searchBy", "All", true) All</label>
+                    <br />
+                    <label>@Html.RadioButton("searchBy", "MLSID") MLSID</label>
+                    <br />
+                    <label>@Html.RadioButton("searchBy", "StreetAddressCity") City</label>
+                    <br />
+                    <label>@Html.RadioButton("searchBy", "StreetAddressState") State</label>
+                    <br />
+                    <label>@Html.RadioButton("searchBy", "StreetAddressZipCode") Zip Code</label>
+                    <br />
+                    <label>@Html.RadioButton("searchBy", "BedroomCount") Bedrooms</label>
+                    <br />
+                    <label>@Html.RadioButton("searchBy", "BathroomCount") Bathrooms</label>
+                    <br />
+                    <label>@Html.RadioButton("searchBy", "HouseSizeSquareFeet") Square Feet</label>
+                    <br />
+                </td>
+                <td>
+                    <input name="searchPhrase" value="" style="color:black;"/>
+                </td>
+                <td>
+                    <input type="submit" value="Submit" style="color:black;"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+}

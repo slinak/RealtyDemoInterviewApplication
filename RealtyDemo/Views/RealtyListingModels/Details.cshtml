@@ -1,0 +1,130 @@
+﻿@model RealtyDemo.Models.RealtyListingModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RealtyListingModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetAddressLine1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StreetAddressLine1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetAddressLine2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StreetAddressLine2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetAddressCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StreetAddressCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetAddressState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StreetAddressState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetAddressZipCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StreetAddressZipCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetAddressNeighborhood)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StreetAddressNeighborhood)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SalePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SalePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InitialListingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InitialListingDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BedroomCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BedroomCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pictures)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pictures)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GarageSizeSquareFeet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GarageSizeSquareFeet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HouseSizeSquareFeet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HouseSizeSquareFeet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LotSizeSquareFeet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LotSizeSquareFeet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MLSID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
